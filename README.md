@@ -7,5 +7,5 @@
 
 ## Lab 2: User Defined Data Structures
 
-- linked_list
+- linked_list_lab
 - binary_search_tree
