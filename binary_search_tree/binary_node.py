@@ -16,6 +16,17 @@ class BinaryNode:
             else:
                 self.right = BinaryNode(value)
 
-
     def search_for_node(self, root, value):
-        pass
+        if root is None:
+            print('Node not found')
+            return
+        elif root.data == value:
+            print('Node found')
+            return
+
+        if root.data > value:
+            print('Direction left')
+            root.search_for_node(root.left, value)
+        else:
+            print('Direction right')
+            root.search_for_node(root.right, value)
