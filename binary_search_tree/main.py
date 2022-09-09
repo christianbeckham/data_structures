@@ -9,8 +9,8 @@ root.insert_node(19)
 root.insert_node(31)
 root.insert_node(42)
 
-# root.search_for_node(root, 31)
-# root.search_for_node(root, 11)
+root.search_for_node(root, 31)
+root.search_for_node(root, 11)
 
 inorder = root.inorder_traversal(root)
 print('In order traversal:', inorder)
