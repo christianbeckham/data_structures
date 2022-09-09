@@ -3,8 +3,8 @@ class BinaryNode:
 
     Attributes:
         data: The value assigned to the node. Set during initialization.
-        left: The child node with a value less than the parent node. Initally set to None or None if it is a leaf node.
-        right: The child node with a value greater than the parent node. Initally set to None or None if it is a leaf node.
+        left: The child node with a value less than the parent node. Initally set to None.
+        right: The child node with a value greater than the parent node. Initally set to None.
     '''
 
     def __init__(self, data):
@@ -63,3 +63,31 @@ class BinaryNode:
         else:
             print('Direction right')
             node.search_for_node(node.right, value)
+
+    def inorder_traversal(self, node, order=[]):
+        '''Inorder (Left, Root, Right)
+        '''
+
+        if node is not None:
+            self.inorder_traversal(node.left)
+            order.append(node.data)
+            self.inorder_traversal(node.right)
+        return order
+
+    def preorder_traversal(self, node, order=[]):
+        '''Preorder (Root, Left, Right)
+        '''
+        if node is not None:
+            order.append(node.data)
+            self.preorder_traversal(node.left)
+            self.preorder_traversal(node.right)
+        return order
+
+    def postorder_traversal(self, node, order=[]):
+        '''Postorder (Left, Right, Root)
+        '''
+        if node is not None:
+            self.postorder_traversal(node.left)
+            self.postorder_traversal(node.right)
+            order.append(node.data)
+        return order
